@@ -1,0 +1,7 @@
+<p>member-detail works!</p>
+<div *ngIf="member$ | async as member">
+    <h3>"{{ member.name }}"</h3>
+    <div>
+        <label>Id: </label>{{ member.id }}
+    </div>
+</div>

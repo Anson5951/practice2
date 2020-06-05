@@ -1,0 +1,30 @@
+[
+    {
+      "id": 1,
+      "name": "花枝",
+      "department": "Dain01",
+      "phone": 756141,
+      "mail": "a@yahoo.com.tw"
+    },
+    {
+      "id": 2,
+      "name": "霸子",
+      "department": "Gorg50",
+      "phone": 428544,
+      "mail": "cc@hotmail.com"
+    },
+    {
+      "id": 3,
+      "name": "荷馬",
+      "department": "Area51",
+      "phone": 100000,
+      "mail": "dd@yahoo.com.tw"
+    },
+    {
+      "id": 4,
+      "name": "美枝",
+      "department": "Suck12",
+      "phone": 756141,
+      "mail": "bb@yahoo.com.tw"
+    }
+  ]

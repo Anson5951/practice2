@@ -1,0 +1,21 @@
+<p>member-list workssss!</p>
+<table>
+    <thead>
+        <tr>
+            <td>姓名</td>
+            <td>部門</td>
+            <td>電話</td>
+            <td>信箱</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let member of members">
+            <td>{{member.name}}</td>
+            <td>{{member.department}}</td>
+            <td>{{member.phone}}</td>
+            <td>{{member.mail}}</td>
+            <td><button routerLink="detail/{{member.id}}">編輯</button></td>
+        </tr>
+    </tbody>
+</table>
