@@ -19,9 +19,9 @@ export class MemberDetailComponent implements OnInit {
   member$: Observable<Member>;
   memberForm: FormGroup = new FormGroup({
     name: new FormControl('', Validators.required),
-    department: new FormControl(''),
-    phone: new FormControl(''),
-    mail: new FormControl('', Validators.email)
+    department: new FormControl('', Validators.required),
+    phone: new FormControl('', Validators.required),
+    mail: new FormControl('', [Validators.required, Validators.email])
   });
   editType: string;
   buttonValue: string;
@@ -49,7 +49,7 @@ export class MemberDetailComponent implements OnInit {
             this.memberForm = new FormGroup({
               id: new FormControl(member.id),
               name: new FormControl(member.name, Validators.required),
-              department: new FormControl(member.department, Validators.required),
+              department: new FormControl(member.department, Validators.required), 
               phone: new FormControl(member.phone, Validators.required ),
               mail: new FormControl(member.mail, [Validators.email, Validators.required])
             })
