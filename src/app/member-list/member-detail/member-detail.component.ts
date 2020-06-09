@@ -18,10 +18,10 @@ export class MemberDetailComponent implements OnInit {
 
   member$: Observable<Member>;
   memberForm: FormGroup = new FormGroup({
-    name: new FormControl(''),
+    name: new FormControl('', Validators.required),
     department: new FormControl(''),
     phone: new FormControl(''),
-    mail: new FormControl('')
+    mail: new FormControl('', Validators.email)
   });
   editType: string;
   buttonValue: string;
@@ -49,9 +49,9 @@ export class MemberDetailComponent implements OnInit {
             this.memberForm = new FormGroup({
               id: new FormControl(member.id),
               name: new FormControl(member.name, Validators.required),
-              department: new FormControl(member.department),
-              phone: new FormControl(member.phone),
-              mail: new FormControl(member.mail, Validators.email)
+              department: new FormControl(member.department, Validators.required),
+              phone: new FormControl(member.phone, Validators.required ),
+              mail: new FormControl(member.mail, [Validators.email, Validators.required])
             })
           }
         }
@@ -85,7 +85,16 @@ export class MemberDetailComponent implements OnInit {
       this.router.navigate(['/member', { type: this.editType, ...formData }]);
     }
     if (this.memberForm.status === 'INVALID') {
-      alert('Name is empty, please fill in!')
+      console.log('test 1 : ' + (this.memberForm.get('name').status === 'INVALID'))
+      if (this.memberForm.get('name').status === 'INVALID') {
+        console.log('name status : ' + this.memberForm.status)
+        alert('Name is invalid, please check!')
+      }
+      console.log('test 2 : ' + (this.memberForm.get('mail').status === 'INVALID'))
+      if (this.memberForm.get('mail').status === 'INVALID') {
+        console.log('mail status : ' + this.memberForm.status)
+        alert('Mail is invalid, please check!')
+      }
     }
   }
 }
