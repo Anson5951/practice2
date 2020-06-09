@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 
-import { map } from 'rxjs/operators';
+import { map, tap, find } from 'rxjs/operators';
 
 import { Member } from "../class/member";
 
@@ -9,6 +9,8 @@ import { Member } from "../class/member";
   providedIn: 'root'
 })
 export class MemberService {
+
+  members: Member[];
 
   constructor(private http: HttpClient) { }
 
@@ -18,7 +20,8 @@ export class MemberService {
 
   getMember$(id: number | string) {
     return this.http.get('/assets/member.json').pipe(
-      map((members: Member[]) => members.filter( member => member.id !== id)[0])
+      tap(_ => console.log('service get id : ' + id)),
+      map((members: Member[]) => members.find( member => member.id === id))
     )
   }
 }

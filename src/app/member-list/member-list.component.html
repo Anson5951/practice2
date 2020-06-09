@@ -1,21 +1,22 @@
 <p>member-list workssss!</p>
-<table>
-    <thead>
+<p-button routerLink="detail/create/0">新增</p-button>
+<p-table [value]="members">
+    <ng-template pTemplate="header">
         <tr>
-            <td>姓名</td>
-            <td>部門</td>
-            <td>電話</td>
-            <td>信箱</td>
-            <td></td>
+            <th>姓名</th>
+            <th>部門</th>
+            <th>電話</th>
+            <th>信箱</th>
+            <th></th>
         </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let member of members">
+    </ng-template>
+    <ng-template pTemplate="body" let-member>
+        <tr>
             <td>{{member.name}}</td>
             <td>{{member.department}}</td>
             <td>{{member.phone}}</td>
             <td>{{member.mail}}</td>
-            <td><button routerLink="detail/{{member.id}}">編輯</button></td>
+            <td><p-button routerLink="detail/modify/{{member.id}}">編輯</p-button></td>
         </tr>
-    </tbody>
-</table>
+    </ng-template>
+</p-table>

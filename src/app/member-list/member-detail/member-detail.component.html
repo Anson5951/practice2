@@ -1,7 +1,28 @@
-<p>member-detail works!</p>
-<div *ngIf="member$ | async as member">
-    <h3>"{{ member.name }}"</h3>
+<div *ngIf="memberForm">
     <div>
-        <label>Id: </label>{{ member.id }}
+        <div [formGroup]="memberForm">
+            <br>
+            <span class="ui-float-label">
+                <input formControlName="name" type="text" size="30" pInputText required>
+                <label for="float-input">姓名*</label>
+            </span>
+            <br>
+            <span class="ui-float-label">
+                <input formControlName="department" type="text" size="30" pInputText>
+                <label for="float-input">部門</label>
+            </span>
+            <br>
+            <span class="ui-float-label">
+                <input formControlName="phone" type="text" size="30" pInputText>
+                <label for="float-input">電話</label>
+            </span>
+            <br>
+            <span class="ui-float-label">
+                <input formControlName="mail" type="text" size="30" pInputText>
+                <label for="float-input">信箱</label>
+            </span>
+            <p-button label="{{buttonValue}}" (click)="confirm()"></p-button>
+            <p-button label="返回" (click)="goBack()"></p-button>
+        </div>
     </div>
 </div>
