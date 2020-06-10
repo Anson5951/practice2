@@ -1,0 +1,12 @@
+<div>
+    <p [hidden]="isInputError" style="color:red;">帳號或密碼錯誤</p>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <label>帳號: </label>
+        <input type="text" formControlName="account">
+        <br>
+        <label>密碼: </label>
+        <input type="password" formControlName="password">
+        <br>
+        <button type="submit">登入</button>
+    </form>
+</div>

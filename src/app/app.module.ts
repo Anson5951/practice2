@@ -11,12 +11,16 @@ import { ButtonModule } from 'primeng/button';
 import { AppComponent } from './app.component';
 import { MemberListComponent } from './member-list/member-list.component';
 import { MemberDetailComponent } from './member-list/member-detail/member-detail.component';
+import { LoginComponent } from './auth/login/login.component';
+import { MenubarComponent } from './menubar/menubar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MemberListComponent,
-    MemberDetailComponent
+    MemberDetailComponent,
+    LoginComponent,
+    MenubarComponent
   ],
   imports: [
     BrowserModule,
