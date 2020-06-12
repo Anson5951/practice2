@@ -11,8 +11,8 @@ export class AuthService {
 
   isLoggedIn = false;
   correctAccount = {
-    account: "123456",
-    password: "123456"
+    account: "123",
+    password: "123"
   }
   // store the URL so we can redirect after logging in
   redirectUrl: string = '';
@@ -29,5 +29,6 @@ export class AuthService {
 
   logout(): void {
     this.isLoggedIn = false;
+    console.log('service logged you out.')
   }
 }

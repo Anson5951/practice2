@@ -12,7 +12,7 @@ import { Constants } from 'src/app/class/constants';
 @Component({
   selector: 'app-member-detail',
   templateUrl: './member-detail.component.html',
-  styleUrls: ['./member-detail.component.sass']
+  styleUrls: ['./member-detail.component.scss']
 })
 export class MemberDetailComponent implements OnInit {
 

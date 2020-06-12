@@ -10,7 +10,7 @@ import { Constants } from "../class/constants";
 @Component({
   selector: 'app-member-list',
   templateUrl: './member-list.component.html',
-  styleUrls: ['./member-list.component.sass']
+  styleUrls: ['./member-list.component.scss']
 })
 export class MemberListComponent implements OnInit, OnDestroy {
 
